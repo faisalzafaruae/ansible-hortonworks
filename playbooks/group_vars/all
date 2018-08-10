@@ -3,7 +3,7 @@
 ## cluster configuration ##
 ###########################
 
-cluster_name: 'mytestcluster'
+cluster_name: 'zdpdemocluster'
 
 ambari_version: '2.6.2.2'                                 # must be the 4-part full version number
 
@@ -23,7 +23,7 @@ repo_base_url: 'http://public-repo-1.hortonworks.com'     # change this if using
 ## general configuration ##
 ###########################
 
-external_dns: yes                                         # set to yes to use the existing DNS (when no, it will update the /etc/hosts file - must be set to 'no' when using Azure)
+external_dns: no                                         # set to yes to use the existing DNS (when no, it will update the /etc/hosts file - must be set to 'no' when using Azure)
 disable_firewall: no                                      # set to yes to disable the existing local firewall service (iptables, firewalld, ufw)
 
 
@@ -90,8 +90,8 @@ security_options:
 ##########################
 
 ranger_options:                                           # only used if RANGER_ADMIN is part of the blueprint stack
-  ranger_admin_password: 'AsdQwe123'                      # the password for the Ranger admin users (both admin and amb_ranger_admin)
-  ranger_keyadmin_password: 'AsdQwe123'                   # the password for the Ranger keyadmin user (will only be set in HDP3, in HDP2 it will remain the default keyadmin)
+  ranger_admin_password: 'Dubai@202092'                      # the password for the Ranger admin users (both admin and amb_ranger_admin)
+  ranger_keyadmin_password: 'Dubai@202092'                   # the password for the Ranger keyadmin user (will only be set in HDP3, in HDP2 it will remain the default keyadmin)
   kms_master_key_password: "{{ default_password }}"       # password used for encrypting the Master Key
   enable_plugins: yes                                     # set to 'yes' if the plugins should be enabled for all of the installed services
 
@@ -101,9 +101,9 @@ ranger_options:                                           # only used if RANGER_
 ##########################
 
 ambari_admin_user: 'admin'
-ambari_admin_password: 'admin'                            # the password for the above admin user
-ambari_admin_default_password: 'admin'                    # no need to change this (unless the Ambari default changes)
-default_password: 'AsdQwe123456'                          # a default password for all required passwords which are not specified in the blueprint
+ambari_admin_password: 'Dubai@202092'                            # the password for the above admin user
+ambari_admin_default_password: 'Dubai@202092'                    # no need to change this (unless the Ambari default changes)
+default_password: 'Dubai@202092'                          # a default password for all required passwords which are not specified in the blueprint
 config_recommendation_strategy: 'NEVER_APPLY'
 
 wait: true                                                # wait for the cluster to finish installing
