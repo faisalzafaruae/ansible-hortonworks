@@ -1,14 +1,14 @@
 ---
 cloud_config:
-  name_suffix: ''                                  # Set this to a domain name (like '.example.com') when using the Azure internal DNS otherwise the cluster won't use FQDN nodes
+  name_suffix: 'zdpdemo'                                  # Set this to a domain name (like '.example.com') when using the Azure internal DNS otherwise the cluster won't use FQDN nodes
   location: 'West Europe'
-  admin_username: azure-user
+  admin_username: zaloni
   ssh:
     publickey: '~/.ssh/id_rsa.pub'
     privatekey: '~/.ssh/id_rsa'
-  resource_group: Testing
+  resource_group: ZDPDemoHortonWorks
   storage_account:
-    name: teststorage000111111
+    name: zdpdemo10082018
     type: Standard_LRS
   network:
     name: "{{ cluster_name }}-network"
@@ -33,7 +33,7 @@ nodes:
     security_group: ssh_access
 
   - host_group: "hdp-slave"
-    count: 2
+    count: 4
     image:
       offer: CentOS
       publisher: OpenLogic
@@ -44,7 +44,7 @@ nodes:
     security_group: ssh_access
 
   - host_group: "hdp-edge"
-    count: 0
+    count: 1
     image:
       offer: CentOS
       publisher: OpenLogic
